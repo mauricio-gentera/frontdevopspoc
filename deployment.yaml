@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: caja
+  namespace: galileo-cobranza
+  labels:
+    app: caja
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        apps: caja-service
+    spec:
+      containers:
+      - name: caja-service
+        image: gcr.io/fintech-desarrollo-mx/front-caja:1.0.112
+        ports:
+        - containerPort: 80

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: caja-service
+  namespace: galileo-cobranza
+spec:
+  ports:
+    - name: http
+      port: 80
+  type: LoadBalancer
+  selector:
+    apps: caja-service
